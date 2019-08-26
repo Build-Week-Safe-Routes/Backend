@@ -6,6 +6,15 @@ const jwt = require("jsonwebtoken");
 const jwtSecret = process.env.JWT_SECRET;
 const User = require("./auth-model.js");
 
+router.get("/", async (req, res) => {
+  try {
+    const users = User.find();
+    res.status(201).json(users);
+  } catch (e) {
+    res.status(500).json({ error: "Something went wrong with the server." });
+  }
+});
+
 router.post("/register", async (req, res) => {
   const user = req.body;
 

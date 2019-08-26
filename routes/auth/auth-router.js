@@ -9,7 +9,7 @@ const User = require("./auth-model.js");
 router.get("/", async (req, res) => {
   console.log("get");
   try {
-    const users = User.find();
+    const users = await User.find();
     res.status(201).json(users);
   } catch (e) {
     res.status(500).json({ error: "Something went wrong with the server." });

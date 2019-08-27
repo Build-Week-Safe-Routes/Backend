@@ -4,7 +4,7 @@
 
 ## Endpoints
 
-- /api/accidents/coords
+- /accident/coords
 
 #### POST
 

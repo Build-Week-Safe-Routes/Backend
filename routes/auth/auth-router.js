@@ -7,7 +7,6 @@ const jwtSecret = process.env.JWT_SECRET;
 const User = require("./auth-model.js");
 
 router.get("/", async (req, res) => {
-  console.log("get");
   try {
     const users = await User.find();
     res.status(201).json(users);
@@ -17,7 +16,6 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/register", async (req, res) => {
-  console.log("post", req.body);
   const user = req.body;
 
   if (user.username && user.password) {

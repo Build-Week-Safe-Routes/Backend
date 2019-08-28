@@ -7,6 +7,14 @@ exports.seed = function(knex) {
     .then(async function() {
       // Inserts seed entries
 
-      await knex("accidents").insert(json.slice(0, 3000));
+      const accidentPromises = [];
+      json.forEach(accident => {
+        accidentPromises.push(insertAcc(knex, accident));
+      });
+      return Promise.all(accidentPromises);
     });
+};
+
+const insertAcc = (knex, accident) => {
+  return knex("accidents").insert(accident);
 };

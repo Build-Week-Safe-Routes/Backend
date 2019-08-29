@@ -1,4 +1,4 @@
-const json = require("../../DS/safe-routes-app-df.json");
+const json = require("../../DS/data.json");
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries

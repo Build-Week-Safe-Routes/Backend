@@ -15,9 +15,10 @@ router.post("/coords", async (req, res) => {
   const { LATITUDE, LONGITUD } = req.body;
 
   try {
+    const delta = 0.03;
     const list = await db("accidents")
-      .whereBetween("LATITUDE", [LATITUDE - 1, LATITUDE + 1])
-      .andWhereBetween("LONGITUD", [LONGITUD - 1, LONGITUD + 1]);
+      .whereBetween("LATITUDE", [LATITUDE - delta, LATITUDE + delta])
+      .andWhereBetween("LONGITUD", [LONGITUD - delta, LONGITUD + delta]);
     res.status(200).json(list);
   } catch (e) {
     res.status(500).json({ error: "Something went wrong with the server" });

@@ -8,38 +8,42 @@
 
 #### POST
 
-- schema for request body:
+- schema for request body: range (40.50398611, -74.24750278) to (41.13000556, -71.86688333)
 
 ```
 {
-	"LATITUDE": 32,
-	"LONGITUD": -85
+	"LATITUDE": 40.8,
+	"LONGITUD": -73.6
 }
 ```
 
-- return:
+- return: range about 2.5 mile radius
 
 ```
 [
     {
-        "id": 3711,
-        "TWAY_ID": "SR-51",
-        "TWAY_ID2": "NO SECOND STREET",
-        "COUNTY": "SAN MATEO",
-        "LATITUDE": "32.61823889",
-        "LONGITUD": "-85.37138333",
-        "MONTH": 1,
-        "DAY": 13,
-        "YEAR": 2015,
+        "id": 15215,
+        "TWAY_ID": "OCEAN PKY",
+        "TWAY_ID2": "AVE T",
+        "COUNTY": "NEW YORK CITY",
+        "LATITUDE": "41.00000000",
+        "LONGITUD": "-74.00000000",
+        "MONTH": 9,
+        "DAY": 15,
+        "YEAR": 2014,
         "DAY_WEEK": "TUESDAY",
         "LGT_COND": "NIGHT",
         "WEATHER": "CLEAR",
         "WRK_ZONE": 0,
         "FATALS": 1,
         "PEDS": 0,
-        "MAN_COLL": "ANGLED",
-        "FUNC_SYS": "ARTERY",
-        "TYP_INT": "NOT AN INTERSECTION"
+        "MAN_COLL": "ANGLE",
+        "FUNC_SYS": "UNKNOWN",
+        "TYP_INT": "FOUR-WAY",
+        "STATE": "NEW YORK",
+        "FUNC_SYS_NUM": 0,
+        "TYP_INT_NUM": 2,
+        "MAN_COLL_NUM": 6
     },
     ...
 ]
